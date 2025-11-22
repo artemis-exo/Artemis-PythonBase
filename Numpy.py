@@ -117,6 +117,217 @@ int_arr=conv.astype(int)
 print(int_arr)
 print(int_arr.dtype)
 
+#Airthematic Operations
+import numpy as np
+arrr=np.array([[1,2,3],[4,5,6]])
+print(arrr+5)
+print(arrr*5)
+print(arrr**5)
+
+# Aggregation Functions - Summarize , Average or Highest product
+import numpy as np
+num=np.array([1,2,3,4,5])
+# 1. Sum
+print(np.sum(num))
+print(num.sum())
+# 2. Mean
+print(np.mean(num))
+print(num.mean())
+# 3. Min
+print(np.min(num))
+print(num.min())
+# 4. Max
+print(np.max(num))
+print(num.max())
+# 5. Standard Deviation
+print(np.std(num))
+print(num.std())
+# 6. Median
+print(np.median(num))
+
+# INDEXING AND SLICING
+'''
+Numpy uses 0 based indexing
+It has both Positive and Negative Indexing
+array[index]- for 1D array
+array[row,column]- for 2D array
+'''
+import numpy as np
+arre=np.array([1,2,3,4,5,6,7])
+print(arre[0])
+print(arre[1])
+print(arre[-1])
+
+'''
+Slicing is extracting a SubArray from a Parent array
+array[start:end:step]- Syntax , start to end-1
+negative step, -1 reverse
+In this stop pointer is excluded
+'''
+import numpy as np
+aero=np.array([1,2,3,4,5,6,7])
+print(aero[1:5])
+print(aero[:4])
+print(aero[::2])
+print(aero[::-1])
+
+# FANCY INDEXING
+'''
+selecting multiple elements at once
+It only modifies the copy of the array not the original Data 
+'''
+
+import numpy as np
+aeroo=np.array([1,2,3,4,5,6,7])
+print(aeroo[[0,2,4]])
+
+# BOOLEAN MASKING
+'''
+Filter elements on the basis of the specified condition 
+'''
+import numpy as np
+aric=np.array([33,4,514,14,5677,5,12,34,5,44,545,55,4,66,7,5,23,325,325,5,353,5535,235,3])
+print(aric[aric>14])
+
+# RESHAPING AND MANIPULATING
+'''
+Changing the dimensions of an Array without modifying the data
+To convert 1D array to 2D array without changing its data
+arr.reshape()
+reshape(rows,cols) specify new shape
+can only reshape if the dimensions match
+
+Reshaping does not create copy it returns a view
+'''
+# 1. Reshaping
+import numpy as np
+amm=np.array([1,2,3,4,5,6])
+reshape_Arr=amm.reshape(3,2)
+print(reshape_Arr)
+
+# 2. Flattening Array
+'''
+It is used when we need to convert the Multidimensional array into 1D array
+.ravel() -> returns views
+.flatten() -> returns copy
+'''
+import numpy as np
+amero=np.array([[1,2,3],[4,5,6]])
+print(amero.ravel())
+print(amero.flatten())
+
+# ARRAY MODIFICATION
+'''
+Insert - np.insert(array, index,axis=None)
+array - original array
+index -
+value -
+axis - if it is none then it is inserted into a flattened array 
+axis = 0, row-wise 
+1 column wise
+'''
+# For 1D array
+import numpy as np
+aex=np.array([10,20,30,40,50,60,70])
+print(aex)
+new_arr=np.insert(aex,4,45)
+print(new_arr)
+
+# For 2D array
+import numpy as np
+arr_2d=np.array([[1,2,3],[4,5,6]])
+print(arr_2d)
+# Inserting a new row at index 1
+new_arr2D=np.insert(arr_2d,1,[7,8,9], axis=0)
+print(new_arr2D)
+# Inserting a new column at index 1
+newie=np.array([[10,20,30],[40,50,60]])
+print(newie)
+newiw_2D=np.insert(newie,1,[14,18],axis=1)
+print(newiw_2D)
+
+# Append Function
+'''
+np.concatenate((ar1,ar2),axis=None))
+axis 0> vertical stacking
+axis 1> horizontal stacking
+'''
+import numpy as np
+arr=np.array([10,20,30])
+aww=np.array([40,50,60])
+new=np.concatenate((arr,aww))
+print(new)
+neck=np.concatenate((arr,aww,arr),axis=0)
+print(neck)
+
+# Removing Elements of array
+'''
+np.delete(array, index, axis=None)
+flatten array
+'''
+# For 1D array
+rel=np.array([10,20,30,40,50,60])
+print(rel)
+new_del=np.delete(rel,0,axis=0)
+print(new_del)
+
+# For 2D array
+am=np.array([[1,2,3],[4,5,6]])
+print(am)
+new_arr=np.delete(am,0,axis=0)
+print(new_arr)
+
+# Stacking
+'''
+vertically
+horizontally
+
+vstack() -> row wise stacking
+hstack() -> column wise stacking
+'''
+# Vertical Stacking and Horizontal Stacking
+import numpy as np
+acv=np.array([1,2,3])
+acb=np.array([4,5,6])
+print(np.vstack((acv,acb)))
+print(np.hstack((acv,acb)))
+
+# Spilting
+'''
+np.split()
+equal
+
+np.vsplit()
+np.hsplit()
+'''
+import numpy as np
+awp=np.array([10,20,30,40,50,60])
+print(np.split(awp,3))
+
+# BROADCASTING AND VECTORIZATION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
