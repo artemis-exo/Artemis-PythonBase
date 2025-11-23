@@ -305,6 +305,108 @@ awp=np.array([10,20,30,40,50,60])
 print(np.split(awp,3))
 
 # BROADCASTING AND VECTORIZATION
+'''
+1. Broadcasting - It is a mechanism that allows this to happen even when arrays have different shapes. To perform mathematical operations on arrays
+It is a Numpy way by which we can perform different mathematical operations without using loops
+Performs very fast mathematical opertions
+
+It expands smaller arrays to larger to match
+
+Can expand and reshape the 1D array to 2D array
+
+Rules
+1. Matching Dimensions -> [1,2,3] + [4,5,6] =[5,7,9]
+2. Expanding single elements -> [1,2,3] + 10 =[11,12,13]
+3. Incompatible Shapes -> [1,2,3]+[1,2]= will throw an error
+ can reshape it to overcome the 3 pointer
+
+'''
+prices=[100,200,300,400,500]
+discount=10 # 10%
+
+final_prices=[]
+for price in prices:
+    final_price=price-(price*discount/100)
+    final_prices.append(final_price)
+print(final_prices)
+
+import numpy as np
+prim=np.array([100,200,300,400,500])
+discount=15
+final_prim=prim-(prim*discount/100)
+print(final_prim)
+
+mul=prim*2
+print(mul)
+
+# How Numpy handles arrays of different shapes
+import numpy as np
+matrix=np.array([[1,2,3],[4,5,6]])
+vector=np.array([10,20,30]) # 1D Array
+rem=matrix+vector
+print(rem)
+
+'''
+2. Vectorization is the process of performing an operation on entire array at once, rather than element by element
+   in a loop.
+   
+   Works on entire array , 100x faster than loops
+   
+   works on matrix operations
+'''
+
+list1=[1,2,3]
+list2=[4,5,6]
+rwk=[x+y for x,y in zip(list1,list2)]
+print(rwk)
+
+import numpy as np
+sem=np.array([1,2,3])
+tem=np.array([4,5,6])
+yem=sem+tem
+print(yem)
+
+mem= yem*4
+print(mem)
+
+# HANDLING MISSING VALUES
+'''
+It provides built -in functions to overcome the Missing Values
+np.isnan() - detects missing values
+Nan means - not a number 
+np.isinf() - detects infinite values() - 
+np.isneginf()
+'''
+
+# Isnan Function
+import numpy as np
+awx=np.array([1,2,3,np.nan,5,np.nan])
+print(np.isnan(awx))
+
+#np.nan_to_num(array,nan=value) default -0
+import numpy as np
+ayu=np.array([1,2,3,np.nan,5,np.nan])
+cleaned_arr=np.nan_to_num(ayu)
+print(cleaned_arr)
+reves=np.nan_to_num(ayu,nan=64)
+print(reves)
+
+# Isinf function
+import numpy as np
+acv=np.array([1,2,3,np.inf,5,-np.inf])
+print(np.isinf(acv))
+
+#np.nan_to_num(array,posinf=1000,neginf=-1000)
+import numpy as np
+huc=np.array([1,2,3,np.inf,5,-np.inf])
+print(np.isinf(huc))
+cleano=np.nan_to_num(huc,posinf=1000,neginf=-1000)
+print(cleano)
+
+
+
+
+
 
 
 
