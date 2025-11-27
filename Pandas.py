@@ -110,3 +110,54 @@ print("Sample data frame")
 print(hec)
 print("Descriptive statistics")
 print(hec.describe())
+
+'''
+1. How big is your dataset
+2. What are the name sof columns
+
+shape and column
+'''
+import pandas as pd
+data = {
+    "EmployeeID": [101, 102, 103, 104, 105],
+    "Name": ["Alice", "Bob", "Charlie", "David", "Eva"],
+    "Department": ["HR", "IT", "Finance", "IT", "Marketing"],
+    "Salary": [50000, 60000, 55000, 65000, 70000],
+    "JoiningDate": pd.to_datetime([
+        "2020-01-15", "2019-03-10", "2021-07-23", "2018-11-05", "2022-05-30"
+    ])
+}
+ef=pd.DataFrame(data)
+print("Sample data frame")
+print(ef)
+print(f'Shape:{ef.shape}')
+print(f'Column Names:{ef.columns}')
+
+'''
+Data Filtering
+1. select specific column
+2. filter rows
+3. combine multiple conditions 
+
+1. square brackets
+2. boolean conditions - for rows
+
+Selecting columns
+1. A series 
+2. Data Frame multiple columns of data
+
+column=df["Column Name"]
+subset=df["Column Name","Column Name2","...."]
+
+filtering rows  - Based on conditions extracting specific data
+booleans indexing
+
+based on a single condition
+filtered_rows=df[df["Salary"]>50000]
+
+combine multiple conditions
+filtered_Rows=
+'''
+
+
+
